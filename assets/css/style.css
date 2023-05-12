@@ -114,7 +114,7 @@ h3 {
 /* ------------ Reusable css classes ------------ */
 .section .container {
   padding-top: 3.75rem;
-  padding-right: 4.75rem;
+  padding-bottom: 4.75rem;
 }
 
 .section-title {
@@ -167,10 +167,10 @@ h3 {
 .header {
   width: 100%;
   background-color: var(--color-light);
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  position: fixed;
 }
 
 /* ------------ Nav ------------ */
@@ -178,7 +178,6 @@ h3 {
   height: calc(var(--header-height) + 1.5rem);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   column-gap: 3rem;
 }
 
@@ -255,6 +254,7 @@ h3 {
 .home {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   min-height: 100vh;
 }
