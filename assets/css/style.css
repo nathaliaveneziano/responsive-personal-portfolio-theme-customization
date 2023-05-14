@@ -7,11 +7,16 @@
 
   /* ------------ Colors ------------ */
   /* Color mode HSL (hue, saturation, lightness */
-  --color-white: hsl(252, 30%, 100%);
-  --color-light: hsl(252, 30%, 92%);
+  --primary-color-hue: 352;
+  --dark-color-lightness: 17%;
+  --light-color-lightness: 92%;
+  --white-color-lightness: 100%;
+
+  --color-white: hsl(252, 30%, var(--white-color-lightness));
+  --color-light: hsl(252, 30%, var(--light-color-lightness));
   --color-gray: hsl(252, 15%, 65%);
-  --color-primary: hsl(352, 75%, 60%);
-  --color-dark: hsl(252, 30%, 17%);
+  --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+  --color-dark: hsl(252, 30%, var(--dark-color-lightness));
 
   /* ------------ Font and Typography ------------ */
   /* .5rem = 8px | rem = 16px */
@@ -664,6 +669,7 @@ h3 {
   margin: 0 var(--m-0-75);
   cursor: pointer;
   white-space: nowrap;
+  color: var(--color-dark);
   transition: 0.3s;
 }
 
@@ -1136,8 +1142,8 @@ h3 {
 }
 
 .customize-theme .choose-bg .bg-1 {
-  background: var(--color-light);
-  color: var(--color-dark);
+  background: hsl(252, 30%, 92%);
+  color: hsl(252, 30%, 17%);
 }
 
 .customize-theme .choose-bg .bg-2 {
@@ -1146,7 +1152,7 @@ h3 {
 }
 
 .customize-theme .choose-bg .bg-3 {
-  background: hsl(252, 30%, 10%);
+  background: hsl(252, 30%, 0%);
   color: #fff;
 }
 
