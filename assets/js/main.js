@@ -6,9 +6,9 @@ const navMenu = document.getElementById('nav-menu'),
 
 // remove class from array of spans selectors
 const removeSelectors = (array, classRemove) => {
-  array.forEach((element) => {
+  for (let element of array) {
     element.classList.remove(classRemove);
-  });
+  }
 };
 
 /* ------------ SHOW MENU ------------ */
@@ -66,6 +66,35 @@ const swiper = new Swiper('.testimonial-wrapper', {
 /* ------------ SCROLL SECTIONS ACTIVE LINK ------------ */
 
 /* ------------ PORTFOLIO ITEM FILTER ------------ */
+const filterContainer = document.querySelector('.portfolio-filter-inner'),
+  filterBtns = filterContainer.children,
+  totalFilterBtn = filterBtns.length,
+  portfolioItem = document.querySelectorAll('.portfolio-item'),
+  totalPortfolioItem = portfolioItem.length;
+
+for (let i = 0; i < totalFilterBtn; i++) {
+  filterBtns[i].addEventListener('click', function () {
+    removeSelectors(filterBtns, 'active');
+
+    this.classList.toggle('active');
+
+    const filterValue = this.getAttribute('data-filter');
+    for (let k = 0; k < totalPortfolioItem; k++) {
+      if (filterValue === portfolioItem[k].getAttribute('data-category')) {
+        portfolioItem[k].classList.add('show');
+        portfolioItem[k].classList.remove('hide');
+      } else {
+        portfolioItem[k].classList.remove('show');
+        portfolioItem[k].classList.add('hide');
+      }
+
+      if (filterValue === 'all') {
+        portfolioItem[k].classList.add('show');
+        portfolioItem[k].classList.remove('hide');
+      }
+    }
+  });
+}
 
 /* ------------  THEME/DISPLAY CUSTOMIZATION ------------ */
 const theme = document.querySelector('#theme-change');
