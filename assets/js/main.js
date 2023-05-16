@@ -204,15 +204,11 @@ colorPallete.forEach((color) => {
 });
 
 /* --- THEME BACKGROUND --- */
-let lightColorLightness;
-let whiteColorLightness;
-let darkColorLightness;
-
 const changeBG = (element, color1, color2, color3, array) => {
   element.addEventListener('click', () => {
-    darkColorLightness = color1;
-    whiteColorLightness = color2;
-    lightColorLightness = color3;
+    let darkColorLightness = color1;
+    let whiteColorLightness = color2;
+    let lightColorLightness = color3;
 
     // remove active class from the others
     removeSelectors(array, 'active');
